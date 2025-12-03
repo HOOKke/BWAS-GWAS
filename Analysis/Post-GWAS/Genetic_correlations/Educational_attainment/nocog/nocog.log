@@ -1,0 +1,48 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--sumstats NonCog_GWAS_excl23andMe_20201104.tsv \
+--N 510795.0 \
+--out nocog \
+--merge-alleles /mnt/data0/home/khu/ldsc/eur_w_ld_chr/w_hm3.snplist \
+--snp variant_id 
+
+Interpreting column names as follows:
+variant_id:	Variant ID (e.g., rs number)
+effect_allele:	Allele 1, interpreted as ref allele for signed sumstat.
+other_allele:	Allele 2, interpreted as non-ref allele for signed sumstat.
+MAF:	Allele frequency
+Z:	Z-score (0 --> no effect; above 0 --> A1 is trait/risk increasing)
+p_value:	p-Value
+
+Reading list of SNPs for allele merge from /mnt/data0/home/khu/ldsc/eur_w_ld_chr/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from NonCog_GWAS_excl23andMe_20201104.tsv into memory 5000000 SNPs at a time.
+Read 7305956 SNPs from --sumstats file.
+Removed 6165119 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1140837 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (1140837 SNPs remain).
+Using N = 510795.0
+Median value of Z was 8.643369e-06, which seems sensible.
+Removed 0 SNPs whose alleles did not match --merge-alleles (1140837 SNPs remain).
+Writing summary statistics for 1217311 SNPs (1140837 with nonmissing beta) to nocog.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.576
+Lambda GC = 1.451
+Max chi^2 = 70.414
+727 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Wed Aug 16 16:12:36 2023
+Total time elapsed: 41.67s
