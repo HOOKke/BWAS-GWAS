@@ -1,0 +1,46 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--sumstats Davies2018_UKB_RT_summary_results_29052018.txt \
+--N 300486.0 \
+--out RT \
+--merge-alleles /mnt/data0/home/khu/ldsc/eur_w_ld_chr/w_hm3.snplist 
+
+Interpreting column names as follows:
+MarkerName:	Variant ID (e.g., rs number)
+Effect_allele:	Allele 1, interpreted as ref allele for signed sumstat.
+Other_allele:	Allele 2, interpreted as non-ref allele for signed sumstat.
+P:	p-Value
+Beta:	[linear/logistic] regression coefficient (0 --> no effect; above 0 --> A1 is trait/risk increasing)
+
+Reading list of SNPs for allele merge from /mnt/data0/home/khu/ldsc/eur_w_ld_chr/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from Davies2018_UKB_RT_summary_results_29052018.txt into memory 5000000 SNPs at a time.
+Read 18485867 SNPs from --sumstats file.
+Removed 17274680 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1211187 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (1211187 SNPs remain).
+Using N = 300486.0
+Median value of Beta was 2.0412e-06, which seems sensible.
+Removed 3 SNPs whose alleles did not match --merge-alleles (1211184 SNPs remain).
+Writing summary statistics for 1217311 SNPs (1211184 with nonmissing beta) to RT.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.491
+Lambda GC = 1.383
+Max chi^2 = 82.796
+443 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Tue Aug 15 16:00:10 2023
+Total time elapsed: 1.0m:0.9799999999999969s
