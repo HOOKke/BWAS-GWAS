@@ -1,0 +1,65 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out corr_mode1 \
+--rg /mnt/data2/home02/khu/UKB_GWAS/CCA_combine/mental_sMRI/GWAS_all_IDP/IDP1/LDSC/SNP_heritability/result.sumstats.gz,/mnt/data0/home/khu/UKB_GWAS/CCA_combine/mental_combine/GWAS_IDP/GWAS_2/LDSC/gene_corr/MDD/MDD2019/MDD2019.sumstats.gz \
+--ref-ld-chr /mnt/data0/home/khu/UKB_GWAS/Imputation_Calls/new_GWAS_20734/SNP_heritability_LDSC/eur_w_ld_chr/ \
+--w-ld-chr /mnt/data0/home/khu/UKB_GWAS/Imputation_Calls/new_GWAS_20734/SNP_heritability_LDSC/eur_w_ld_chr/ 
+
+Beginning analysis at Mon Aug 14 20:42:00 2023
+Reading summary statistics from /mnt/data2/home02/khu/UKB_GWAS/CCA_combine/mental_sMRI/GWAS_all_IDP/IDP1/LDSC/SNP_heritability/result.sumstats.gz ...
+Read summary statistics for 753321 SNPs.
+Reading reference panel LD Score from /mnt/data0/home/khu/UKB_GWAS/Imputation_Calls/new_GWAS_20734/SNP_heritability_LDSC/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /mnt/data0/home/khu/UKB_GWAS/Imputation_Calls/new_GWAS_20734/SNP_heritability_LDSC/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 750342 SNPs remain.
+After merging with regression SNP LD, 750342 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /mnt/data0/home/khu/UKB_GWAS/CCA_combine/mental_combine/GWAS_IDP/GWAS_2/LDSC/gene_corr/MDD/MDD2019/MDD2019.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 750342 SNPs remain.
+748497 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.2106 (0.019)
+Lambda GC: 1.1364
+Mean Chi^2: 1.1556
+Intercept: 1.0161 (0.008)
+Ratio: 0.1035 (0.0516)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0622 (0.0026)
+Lambda GC: 1.4637
+Mean Chi^2: 1.5965
+Intercept: 1.0033 (0.0112)
+Ratio: 0.0055 (0.0188)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0108 (0.0046)
+Mean z1*z2: 0.0377
+Intercept: 0.0103 (0.0063)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.0941 (0.041)
+Z-score: 2.2967
+P: 0.0216
+
+
+Summary of Genetic Correlation Results
+                                                                                                                p1                                                                                                                      p2      rg     se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+ /mnt/data2/home02/khu/UKB_GWAS/CCA_combine/mental_sMRI/GWAS_all_IDP/IDP1/LDSC/SNP_heritability/result.sumstats.gz  /mnt/data0/home/khu/UKB_GWAS/CCA_combine/mental_combine/GWAS_IDP/GWAS_2/LDSC/gene_corr/MDD/MDD2019/MDD2019.sumstats.gz  0.0941  0.041  2.2967  0.0216  0.0622     0.0026  1.0033     0.0112    0.0103       0.0063
+
+Analysis finished at Mon Aug 14 20:42:12 2023
+Total time elapsed: 12.04s
